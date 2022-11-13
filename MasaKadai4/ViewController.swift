@@ -15,17 +15,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        numberOfLabel.text = String(0)
+        updateLabel()
     }
 
     @IBAction private func countUpButton(_ sender: Any) {
         count += 1
-        numberOfLabel.text = String(count)
+        updateLabel()
     }
 
     @IBAction private func clearButton(_ sender: Any) {
         count = 0
-        numberOfLabel.text = String(count)
+        updateLabel()
     }
 
+    private func updateLabel() {
+        numberOfLabel.text = String(count)
+    }
 }
